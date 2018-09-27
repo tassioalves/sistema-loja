@@ -5,10 +5,15 @@
  */
 package br.edu.ifms.loja.fornecedor.exception;
 
+import br.edu.ifms.loja.app.exception.ApplicationException;
+
 /**
  *
  * @author Gustavo
  */
-public class CNPJException {
-    
+public class CNPJException extends ApplicationException{
+    @Override
+    public String getMessage() {
+        return "CNPJ inválido";
+    }
 }

@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifms.edu.lpii.cliente.exception;
+package br.edu.ifms.loja.cliente.exception;
+
+import br.edu.ifms.loja.app.exception.ApplicationException;
 
 /**
  *
  * @author PC
  */
-public class CPFException extends Exception{
+public class CPFException extends ApplicationException{
+
+    @Override
+    public String getMessage() {
+        return "CPF inválido";
+    }
     
 }
