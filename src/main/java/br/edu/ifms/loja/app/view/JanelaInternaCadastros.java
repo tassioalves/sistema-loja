@@ -5,7 +5,6 @@
  */
 package br.edu.ifms.loja.app.view;
 
-import br.edu.ifms.loja.fornecedor.view.CadastroFornecedor;
 import javax.swing.JInternalFrame;
 
 /**
@@ -15,11 +14,8 @@ import javax.swing.JInternalFrame;
 public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
 
     public static JanelaInternaCadastros janelaInternaVendas;
-    private CadastroFornecedor cadastroFornecedor;
 
     private JanelaInternaCadastros() {
-        cadastroFornecedor = new CadastroFornecedor(null, true);
-
         initComponents();
         setTitle("Cadastros");
         setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
@@ -44,14 +40,14 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
 
         botaoProdutos = new javax.swing.JButton();
         botaoClientes = new javax.swing.JButton();
-        botaoFuncionarios = new javax.swing.JButton();
+        botaoUsuarios = new javax.swing.JButton();
         botaoFornecedores = new javax.swing.JButton();
 
         botaoProdutos.setText("Produtos");
 
         botaoClientes.setText("Clientes");
 
-        botaoFuncionarios.setText("Funcionários");
+        botaoUsuarios.setText("Usuarios");
 
         botaoFornecedores.setText("Fornecedores");
 
@@ -65,7 +61,7 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -77,7 +73,7 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -89,7 +85,7 @@ public class JanelaInternaCadastros extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoClientes;
     private javax.swing.JButton botaoFornecedores;
-    private javax.swing.JButton botaoFuncionarios;
     private javax.swing.JButton botaoProdutos;
+    private javax.swing.JButton botaoUsuarios;
     // End of variables declaration//GEN-END:variables
 }

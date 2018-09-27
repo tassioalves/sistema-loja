@@ -25,7 +25,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="botaoClientes" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="botaoFuncionarios" min="-2" pref="130" max="-2" attributes="0"/>
+              <Component id="botaoUsuarios" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="botaoFornecedores" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -39,7 +39,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botaoProdutos" alignment="3" min="-2" pref="104" max="-2" attributes="0"/>
                   <Component id="botaoClientes" alignment="3" min="-2" pref="104" max="-2" attributes="0"/>
-                  <Component id="botaoFuncionarios" alignment="3" min="-2" pref="104" max="-2" attributes="0"/>
+                  <Component id="botaoUsuarios" alignment="3" min="-2" pref="104" max="-2" attributes="0"/>
                   <Component id="botaoFornecedores" alignment="3" min="-2" pref="104" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -58,9 +58,9 @@
         <Property name="text" type="java.lang.String" value="Clientes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoFuncionarios">
+    <Component class="javax.swing.JButton" name="botaoUsuarios">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
+        <Property name="text" type="java.lang.String" value="Usuarios"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botaoFornecedores">
