@@ -1,18 +1,16 @@
 package br.edu.ifms.loja.fornecedor.bo;
 
+import br.edu.ifms.loja.app.bo.GenericBO;
 import br.edu.ifms.loja.fornecedor.dao.FornecedorDAO;
 import br.edu.ifms.loja.fornecedor.datamodel.Fornecedor;
 import java.sql.SQLException;
 
-public class FornecedorBO {
+public class FornecedorBO extends GenericBO<Fornecedor>{
 
-    private FornecedorDAO dao;
+    private FornecedorDAO daoFornecedor;
 
-    public FornecedorBO() throws SQLException {
-        dao = new FornecedorDAO();
-    }
-
-    public Fornecedor buscarFornecedorPorCod(Long cod) {
-        return dao.buscarFornecedorPorCod(cod);
+    public FornecedorBO(){
+        super(Fornecedor.class);
+        daoFornecedor = new FornecedorDAO();
     }
 }

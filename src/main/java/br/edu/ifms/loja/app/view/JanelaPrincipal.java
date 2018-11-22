@@ -5,7 +5,7 @@
  */
 package br.edu.ifms.loja.app.view;
 
-import br.ifms.edu.lpii.app.utils.ImagemUtils;
+import br.edu.ifms.loja.app.utils.ImagemUtils;
 import com.towel.swing.img.JImagePanel;
 import java.io.IOException;
 import java.util.logging.Level;

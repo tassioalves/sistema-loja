@@ -5,6 +5,7 @@
  */
 package br.edu.ifms.loja.app;
 
+import br.edu.ifms.loja.app.dao.FabricaDeGerenciadorDeEntidades;
 import br.edu.ifms.loja.app.view.JanelaPrincipal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            FabricaDeGerenciadorDeEntidades.getEntityManager();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
