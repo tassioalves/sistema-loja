@@ -23,7 +23,7 @@ public class FornecedorCRUD extends GenericCRUD<Fornecedor> {
     private FornecedorFormulario formularioFornecedor;
 
     public FornecedorCRUD(Frame parent, boolean modal) {
-        super(parent, modal, Fornecedor.class, new String[]{"id", "nome", "cnpj"});
+        super(parent, modal, Fornecedor.class, new String[]{"id", "nome","razaoSocial","cnpj","telefone","email","endereco","numero","cidade.nome:Cidade"});
 
         fornecedorBO = new FornecedorBO();
         carregarTabela();

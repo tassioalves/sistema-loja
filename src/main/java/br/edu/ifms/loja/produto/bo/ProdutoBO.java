@@ -6,7 +6,6 @@
 package br.edu.ifms.loja.produto.bo;
 
 import br.edu.ifms.loja.app.bo.GenericBO;
-import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import br.edu.ifms.loja.produto.dao.ProdutoDAO;
 import br.edu.ifms.loja.produto.datamodel.Produto;
 import java.util.List;
@@ -25,8 +24,8 @@ public class ProdutoBO extends GenericBO<Produto> {
     }
 
 
-    public List<Cliente> buscarProdutoPorDescricao(String descricao) {
-        return null;
+    public List<Produto> buscarProdutoPorDescricao(String descricao) {
+        return daoProduto.buscarProdutoPorDescricao(descricao);
     }
 
     public List<Produto> listarTodosOsProdutos() {

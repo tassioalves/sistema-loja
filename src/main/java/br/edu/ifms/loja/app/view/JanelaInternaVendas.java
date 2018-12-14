@@ -14,12 +14,14 @@ import javax.swing.JInternalFrame;
 public class JanelaInternaVendas extends javax.swing.JInternalFrame {
 
     private static JanelaInternaVendas janelaInternaVendas;
+    private static FormularioVenda formularioVendas;
     
     private JanelaInternaVendas() {
         initComponents();
         setTitle("Vendas");
         setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
         setClosable(true);
+         formularioVendas = new FormularioVenda(null, true);
     }
 
     public static JanelaInternaVendas getInstance(){
@@ -42,6 +44,11 @@ public class JanelaInternaVendas extends javax.swing.JInternalFrame {
         botaoRelatorios = new javax.swing.JButton();
 
         botaoFrenteDeCaixa.setText("Frente de Caixa");
+        botaoFrenteDeCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFrenteDeCaixaActionPerformed(evt);
+            }
+        });
 
         botaoRelatorios.setText("Relatórios");
 
@@ -68,6 +75,11 @@ public class JanelaInternaVendas extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoFrenteDeCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFrenteDeCaixaActionPerformed
+
+     formularioVendas.setVisible(true);
+    }//GEN-LAST:event_botaoFrenteDeCaixaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

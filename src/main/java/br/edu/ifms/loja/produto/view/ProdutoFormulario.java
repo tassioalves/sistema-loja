@@ -16,6 +16,7 @@ import java.util.List;
 public class ProdutoFormulario extends javax.swing.JPanel {
 
     private ObjectComboBoxModel<Fornecedor> fornecedorModel;
+
     /**
      * Creates new form ProdutoFormulario
      */
@@ -30,11 +31,6 @@ public class ProdutoFormulario extends javax.swing.JPanel {
     }
 
     public void setSelectedFornecedor(Fornecedor f) {
-
-        if (f == null) {
-            return;
-        }
-
         fornecedorModel.setSelectedObject(f);
         comboBoxFornecedor.setModel(fornecedorModel);
         comboBoxFornecedor.updateUI();
@@ -57,13 +53,12 @@ public class ProdutoFormulario extends javax.swing.JPanel {
         campoDescricao = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         campoMarca = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        campoModelo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         campoQuantidade = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         campoValor = new javax.swing.JTextField();
         comboBoxFornecedor = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel1.setText("Descrição:");
 
@@ -75,13 +70,13 @@ public class ProdutoFormulario extends javax.swing.JPanel {
 
         jLabel2.setText("Marca:");
 
-        jLabel3.setText("Modelo:");
-
         jLabel4.setText("Quantidade:");
 
         jLabel5.setText("Valor:");
 
         comboBoxFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel6.setText("Fornecedor:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -104,13 +99,12 @@ public class ProdutoFormulario extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoMarca))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoModelo))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)))
+                        .addComponent(campoQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -124,11 +118,7 @@ public class ProdutoFormulario extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(campoQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -136,9 +126,11 @@ public class ProdutoFormulario extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(4, 4, 4)
                 .addComponent(comboBoxFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -150,15 +142,14 @@ public class ProdutoFormulario extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campoDescricao;
     private javax.swing.JTextField campoMarca;
-    private javax.swing.JTextField campoModelo;
     private javax.swing.JTextField campoQuantidade;
     private javax.swing.JTextField campoValor;
     private javax.swing.JComboBox<String> comboBoxFornecedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 
     public javax.swing.JTextField getCampoDescricao() {
@@ -175,14 +166,6 @@ public class ProdutoFormulario extends javax.swing.JPanel {
 
     public void setCampoMarca(javax.swing.JTextField campoMarca) {
         this.campoMarca = campoMarca;
-    }
-
-    public javax.swing.JTextField getCampoModelo() {
-        return campoModelo;
-    }
-
-    public void setCampoModelo(javax.swing.JTextField campoModelo) {
-        this.campoModelo = campoModelo;
     }
 
     public javax.swing.JTextField getCampoQuantidade() {

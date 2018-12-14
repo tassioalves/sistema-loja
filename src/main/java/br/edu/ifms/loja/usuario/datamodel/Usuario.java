@@ -114,5 +114,11 @@ public class Usuario {
         this.cidade = cidade;
     }
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+    
+
 
 }

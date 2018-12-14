@@ -23,7 +23,7 @@ public class UsuarioCRUD extends GenericCRUD<Usuario> {
     private UsuarioFormulario formularioUsuario;
 
     public UsuarioCRUD(Frame parent, boolean modal) {
-        super(parent, modal, Usuario.class, new String[]{"id","nome","email","papel"});
+        super(parent, modal, Usuario.class, new String[]{"id","nome","email","papel","endereco","numero","cidade.nome:Cidade"});
         usuarioBO = new UsuarioBO();
         carregarTabela();
     }

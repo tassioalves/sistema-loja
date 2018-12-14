@@ -27,11 +27,11 @@ public class ProdutoCRUD extends GenericCRUD<Produto> {
     private FornecedorBO fornecedorBO;
 
     public ProdutoCRUD(Frame parent, boolean modal) {
-        super(parent, modal, Produto.class, new String[]{"id", "descricao", "marca", "modelo"});
+        super(parent, modal, Produto.class, new String[]{"id", "descricao", "marca", "qtde", "valor", "fornecedor.nome:Fornecedor"});
         produtoBO = new ProdutoBO();
         fornecedorBO = new FornecedorBO();
         carregarTabela();
-        carregarComboBoxFornecedro();
+        carregarComboBoxFornecedor();
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ProdutoCRUD extends GenericCRUD<Produto> {
         super.setSize(800, 600);
     }
 
-    public void carregarComboBoxFornecedro() {
+    public void carregarComboBoxFornecedor() {
         List<Fornecedor> fornecedores = fornecedorBO.listarTodos();
         formularioProduto.carregarFornecedor(fornecedores);
     }
@@ -55,8 +55,7 @@ public class ProdutoCRUD extends GenericCRUD<Produto> {
     protected void camposParaObjeto() {
         produto.setDescricao(formularioProduto.getCampoDescricao().getText());
         produto.setMarca(formularioProduto.getCampoMarca().getText());
-        produto.setModelo(formularioProduto.getCampoModelo().getText());
-        produto.setQtde(new BigInteger(formularioProduto.getCampoQuantidade().getText()));
+        produto.setQtde(Integer.parseInt((formularioProduto.getCampoQuantidade().getText())));
         produto.setValor(new Double(formularioProduto.getCampoQuantidade().getText()));
         produto.setFornecedor(formularioProduto.getFornecedor());
     }
@@ -65,7 +64,6 @@ public class ProdutoCRUD extends GenericCRUD<Produto> {
     protected void objetoParaCampos() {
         formularioProduto.getCampoDescricao().setText(produto.getDescricao());
         formularioProduto.getCampoMarca().setText(produto.getMarca());
-        formularioProduto.getCampoModelo().setText(produto.getModelo());
         formularioProduto.setSelectedFornecedor(produto.getFornecedor());
         if (produto.getValor() != null) {
             formularioProduto.getCampoValor().setText(produto.getValor().toString());
@@ -111,7 +109,7 @@ public class ProdutoCRUD extends GenericCRUD<Produto> {
 
     @Override
     protected List<Produto> carregarListaParaTabela() {
-        carregarComboBoxFornecedro();
+        carregarComboBoxFornecedor();
         return produtoBO.listarTodos();
     }
 

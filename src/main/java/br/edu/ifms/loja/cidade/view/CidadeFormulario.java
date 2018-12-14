@@ -38,12 +38,6 @@ public class CidadeFormulario extends javax.swing.JPanel {
     }
 
     public void setSelectedUf(Uf uf) {
-        carregarUfs();
-
-        if (uf == null) {
-            return;
-        }
-
         ufModel.setSelectedObject(uf);
     }
 

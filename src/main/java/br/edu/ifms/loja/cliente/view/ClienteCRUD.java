@@ -4,10 +4,7 @@ import br.edu.ifms.loja.app.layouts.GenericCRUD;
 import br.edu.ifms.loja.cliente.bo.ClienteBO;
 import br.edu.ifms.loja.cliente.datamodel.Cliente;
 import java.awt.Frame;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class ClienteCRUD extends GenericCRUD<Cliente> {
@@ -17,15 +14,10 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
     private ClienteFormulario formularioCliente;
 
     public ClienteCRUD(Frame parent, boolean modal) {
-        super(parent, modal, Cliente.class, new String[]{"id", "nome", "email"});
+        super(parent, modal, Cliente.class, new String[]{"id","nome","cpf","email","telefone","endereco","cidade.nome:Cidade"});
 
-        try {
-            clienteBO = new ClienteBO();
-            carregarTabela();
-         
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteCRUD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        clienteBO = new ClienteBO();
+        carregarTabela();
     }
 
     @Override
@@ -48,7 +40,7 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
         cliente.setTelefone(formularioCliente.getCampoTelefone().getText());
         cliente.setEndereco(formularioCliente.getCampoEndereco().getText());
         cliente.setNumero(formularioCliente.getCampoNumero().getText());
-        cliente.setCidade_id(formularioCliente.getComboBoxUFCidade().getSelectedCidade());
+        cliente.setCidade(formularioCliente.getComboBoxUFCidade().getSelectedCidade());
     }
 
     @Override
@@ -59,7 +51,7 @@ public class ClienteCRUD extends GenericCRUD<Cliente> {
         formularioCliente.getCampoTelefone().setText(cliente.getTelefone());
         formularioCliente.getCampoEndereco().setText(cliente.getEndereco());
         formularioCliente.getCampoNumero().setText(cliente.getNumero());
-        formularioCliente.getComboBoxUFCidade().setSelectedCidade(cliente.getCidade_id());
+        formularioCliente.getComboBoxUFCidade().setSelectedCidade(cliente.getCidade());
     }
 
     @Override

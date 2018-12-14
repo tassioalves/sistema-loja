@@ -29,18 +29,14 @@ public class Produto {
     private String descricao;
     @Resolvable(colName = "Marca")
     private String marca;
-    @Resolvable(colName = "Modelo")
-    private String modelo;
     @Resolvable(colName = "Qtde")
-    private BigInteger qtde;
+    private Integer qtde;
     @Resolvable(colName = "Valor")
     private Double valor;
     @Resolvable(colName = "Fornecedor_cod")
     @ManyToOne
     private Fornecedor fornecedor;
 
-    
-    
     public long getId() {
         return id;
     }
@@ -65,19 +61,11 @@ public class Produto {
         this.marca = marca;
     }
 
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public BigInteger getQtde() {
+    public Integer getQtde() {
         return qtde;
     }
 
-    public void setQtde(BigInteger qtde) {
+    public void setQtde(Integer qtde) {
         this.qtde = qtde;
     }
 
@@ -97,6 +85,4 @@ public class Produto {
         this.fornecedor = fornecedor;
     }
 
-    
-    
 }

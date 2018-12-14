@@ -28,7 +28,7 @@ public class Cliente {
     private String numero;
     @Resolvable(colName = "Cidade_id")
     @ManyToOne
-    private Cidade cidade_id;
+    private Cidade cidade;
     
     public Cliente() {
     }
@@ -89,11 +89,19 @@ public class Cliente {
         this.numero = numero;
     }
 
-    public Cidade getCidade_id() {
-        return cidade_id;
+    public Cidade getCidade() {
+        return cidade;
     }
 
-    public void setCidade_id(Cidade cidade_id) {
-        this.cidade_id = cidade_id;
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+
+
 }
+
